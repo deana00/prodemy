@@ -1,0 +1,113 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Cambria';
+}
+
+p {
+    text-align: justify;
+}
+
+h2 {
+    margin: 16px 0px;
+}
+
+.container {
+    margin: 5% 20%;
+    padding-top: 5%;
+    background-color: rgb(247, 247, 247);
+    border-radius: 7px;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 200px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.name h2 {
+    color: #D1345B;
+    margin-bottom: 5px;
+}
+
+.contact {
+    padding: 5px 0px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.socmed {
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+    color: black;
+    text-decoration: none;
+}
+
+.main-content {
+    margin: 0% 5%;
+}
+
+.about {
+    margin-bottom: 40px;
+}
+
+.activities {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.activity {
+    background-color: rgb(201, 202, 217);
+    border-radius: 7px;
+    margin: 10px 0px;
+    padding: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.activity-year {
+    margin: 5px 0px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.activity-title {
+    margin: 10px 0px;
+}
+
+.activity-description {
+    font-size: 14px;
+}
+
+.footer {
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer p {
+    text-align: center;
+    font-size: small;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
