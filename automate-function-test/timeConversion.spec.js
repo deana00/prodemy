@@ -71,7 +71,7 @@ describe("Time Conversion Function Test", () => {
         });
 
         // Input seconds > 59
-        it("TC 012 - Return error message for inputting seconds=60", () => {
+        it("TC 012 - Return error message when inputting seconds=60", () => {
             const convTime = timeConversion("01:30:60PM");
             expect(convTime).to.equal("Given input should be in hh:mm:ssPM or hh:mm:ssAM format!");
         });
