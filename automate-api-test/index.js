@@ -11,7 +11,7 @@ async function main () {
         // const res = await req.post('/posts/add').send(updatePost)
         // console.log(res.body)
         
-        // const res = await req.get("/posts/2")
+        const res = await req.get("/posts/2")
 
         // const res = await req.get("/posts/search?q=life")
 
@@ -21,7 +21,7 @@ async function main () {
 
         // const res = await req.get("/posts/5/comments")
 
-        const res = await req.delete("/posts/1")
+        // const res = await req.delete("/posts/1")
         console.log(res.body)
     } catch (error) {
         console.log(error)
