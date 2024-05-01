@@ -53,25 +53,25 @@ describe("Time Conversion Function Test", () => {
         });
 
         // Input hour > 12
-        it("TC 009 - Return error message when inputting hour=50", () => {
+        it("TC 009 - Return error message when inputting hour>12", () => {
             const convTime = timeConversion("50:33:44PM");
             expect(convTime).to.equal("Given input should be in hh:mm:ssPM or hh:mm:ssAM format!");
         });
 
         // Input hour < 1
-        it("TC 010 - Return error message when inputting hour=0", () => {
+        it("TC 010 - Return error message when inputting hour<1", () => {
             const convTime = timeConversion("00:33:44PM");
             expect(convTime).to.equal("Given input should be in hh:mm:ssPM or hh:mm:ssAM format!");
         });
         
         // Input minutes > 59
-        it("TC 011 - Return error message when inputting minutes=60", () => {
+        it("TC 011 - Return error message when inputting minutes>59", () => {
             const convTime = timeConversion("01:60:44PM");
             expect(convTime).to.equal("Given input should be in hh:mm:ssPM or hh:mm:ssAM format!");
         });
 
         // Input seconds > 59
-        it("TC 012 - Return error message when inputting seconds=60", () => {
+        it("TC 012 - Return error message when inputting seconds>59", () => {
             const convTime = timeConversion("01:30:60PM");
             expect(convTime).to.equal("Given input should be in hh:mm:ssPM or hh:mm:ssAM format!");
         });
