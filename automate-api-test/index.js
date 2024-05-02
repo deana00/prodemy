@@ -22,7 +22,7 @@ async function main () {
         // const res = await req.get("/posts/5/comments")
 
         // const res = await req.delete("/posts/1")
-        console.log(res.body)
+        console.log(res)
     } catch (error) {
         console.log(error)
     }

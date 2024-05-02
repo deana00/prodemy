@@ -18,12 +18,14 @@ const req = supertest('https://dummyjson.com')
 
 describe("Posts API", () => {
     // GET all posts
-    it("Get a All Posts API", async () => {
+    it.only("Get a All Posts API", async () => {
         try {
             const res = await req.get("/posts")
+            
+            expect(res.statusCode).equal(200)
             expect(res.body).to.be.jsonSchema(postsSchema)
         } catch (error) {
-            console.log("Error API request", error)
+            throw new Error(error)
         }
     })
 
@@ -31,9 +33,11 @@ describe("Posts API", () => {
     it("Get a Single Post API", async () => {
         try {
             const res = await req.get("/posts/2")
+            
+            expect(res.statusCode).equal(200)
             expect(res.body).to.be.jsonSchema(postSchema)
         } catch (error) {
-            console.log("Error API request", error)
+            throw new Error(error)
         }
     })
 
@@ -41,9 +45,11 @@ describe("Posts API", () => {
     it("Search Posts API", async () => {
         try {
             const res = await req.get("/posts/search?q=life")
+            
+            expect(res.statusCode).equal(200)
             expect(res.body).to.be.jsonSchema(postsSchema)
         } catch (error) {
-            console.log("Error API request", error)
+            throw new Error(error)
         }
     })
 
@@ -51,9 +57,11 @@ describe("Posts API", () => {
     it("Limit and Skip Posts API", async () => {
         try {
             const res = await req.get("/posts?limit=5&skip=5&select=title,reactions,userId")
+            
+            expect(res.statusCode).equal(200)
             expect(res.body).to.be.jsonSchema(limitSkipSchema)
         } catch (error) {
-            console.log("Error API request", error)
+            throw new Error(error)
         }
     })
 
@@ -61,9 +69,11 @@ describe("Posts API", () => {
     it("Get All Posts by User ID API", async () => {
         try {
             const res = await req.get("/posts/user/7")
+            
+            expect(res.statusCode).equal(200)
             expect(res.body).to.be.jsonSchema(postsSchema)
         } catch (error) {
-            console.log("Error API request", error)
+            throw new Error(error)
         }
     })
 
@@ -71,9 +81,11 @@ describe("Posts API", () => {
     it("Get Posts's Comments API", async () => {
         try {
             const res = await req.get("/posts/1/comments")
+            
+            expect(res.statusCode).equal(200)
             expect(res.body).to.be.jsonSchema(commentsSchema)
         } catch (error) {
-            console.log("Error API request", error)
+            throw new Error(error)
         }
     })
 
@@ -88,9 +100,11 @@ describe("Posts API", () => {
             const res = await req
                 .post("/posts/add")
                 .send(addPost)
+            
+            expect(res.statusCode).equal(200)
             expect(res.body).to.be.jsonSchema(postSchema)
         } catch (error) {
-            console.log("Error API request", error)
+            throw new Error(error)
         }
     })
 
@@ -104,9 +118,11 @@ describe("Posts API", () => {
             const res = await req
                 .put("/posts/1")
                 .send(updatePost)
+
+            expect(res.statusCode).equal(200)
             expect(res.body).to.be.jsonSchema(postSchema)
         } catch (error) {
-            console.log("Error API request", error)
+            throw new Error(error)
         }
     })
 
@@ -114,9 +130,11 @@ describe("Posts API", () => {
     it("Delete a Post API", async () => {
         try {
             const res = await req.delete("/posts/1")
+            
+            expect(res.statusCode).equal(200)
             expect(res.body).to.be.jsonSchema(deletePostSchema)
         } catch (error) {
-            console.log("Error API request", error)
+            throw new Error(error)
         }
     })
 })
