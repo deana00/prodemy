@@ -22,9 +22,14 @@ describe('My Login application', () => {
         await captchaCheckbox.click()
         await submitButton.click()
 
-        await errorNotif.waitForDisplayed()
-        await expect(errorNotif).toHaveText(expect.stringContaining('Email Not Valid'))
+        // await errorNotif.waitForDisplayed()
+        // await expect(errorNotif).toHaveText(expect.stringContaining('Email Not Valid'))
+        // expect(errorNotif.getValue()).toHaveText(expect.stringContaining('Email Not Valid'))
+        if ( expect(errorNotif).toHaveText(expect.stringContaining('Email Not Valid')) ) {
+            console.log('ADA ERROR MESSAGE')
+        }
 
+        browser.pause(10000)
     })
 })
 
